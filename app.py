@@ -5,10 +5,10 @@ import numpy as np
 x, y = sp.symbols('x y')
 
 #number of polynomials
-n = m = 20
+n = m = 10
 
 #Geometrical properties
-a, b = 8, 8
+a, b = 16, 16
 h = 1
 
 #mechanical properties
@@ -25,8 +25,8 @@ def P(m, n):
 
 #Wmn
 def W(m, n):
-    return P(m,n)/( D*(math.pi**4)*( (m/a)**2 + (n/b)**2 )**2 )
-
+    return (P(m,n)/( D*(math.pi**4)*( (m/a)**2 + (n/b)**2 )**2 ))*math.sin((m*math.pi*8)/a)*math.sin((n*math.pi*8)/b)
+#x = y = 8
 Wmn = 0
 for i in range(1, m+1):
     for j in range(1, n+1):
